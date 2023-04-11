@@ -1,0 +1,39 @@
+{
+  "name": "sandbox-services",
+  "version": "1.0.0",
+  "description": "Sandbox for PocketLab services",
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build": "tsc --outDir dist src/**/*.ts",
+    "prebuild": "npm run clean",
+    "test": "jasmine --config=jasmine.json",
+    "pretest": "npm run build",
+    "check:env": "bash scripts/check-env.sh",
+    "package:zip": "cd dist && zip -r dist.zip . && cd ..",
+    "prepackage:zip": "npm run build && npm run install:utils",
+    "install:utils": "bash scripts/install-utils.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregorysandoval/sandbox-services.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gregorysandoval/sandbox-services/issues"
+  },
+  "homepage": "https://github.com/gregorysandoval/sandbox-services#readme",
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/aws-sdk": "^2.7.0",
+    "@types/node": "^18.15.11",
+    "@types/oidc-provider": "^8.1.1",
+    "aws-sdk": "^2.1352.0",
+    "jasmine": "^4.6.0",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "oidc-provider": "7.12.0"
+  }
+}

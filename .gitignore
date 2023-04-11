@@ -1,0 +1,11 @@
+### OSX ###
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+### node ###
+/dist/
+/node_modules/
+package-lock.json
+yarn-error.log
+*packaged.yaml
