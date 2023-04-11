@@ -11,7 +11,10 @@
     "check:env": "bash scripts/check-env.sh",
     "package:zip": "cd dist && zip -r dist.zip . && cd ..",
     "prepackage:zip": "npm run build && npm run install:utils",
-    "install:utils": "bash scripts/install-utils.sh"
+    "install:utils": "bash scripts/install-utils.sh",
+    "package:redirect-gateway-lambdas": "bash scripts/stack.sh package redirect-gateway-lambdas",
+    "deploy:redirect-gateway-lambdas": "bash scripts/stack.sh deploy redirect-gateway-lambdas $PL_ENV",
+    "predeploy:redirect-gateway-lambdas": "npm run check:env"
   },
   "repository": {
     "type": "git",

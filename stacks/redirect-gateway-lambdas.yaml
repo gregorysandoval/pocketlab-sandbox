@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Description: Redirect Gateway Lambda Functions
+Parameters:
+  environment:
+    Type: String
+    Default: "Dev"
+    AllowedValues: ["Staging", "Prod", "Dev", "Branch", "Beta"]
+Resources:
+  RedirectGatewayLambdaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+              - 'lambda.amazonaws.com'
+            Action:
+              - 'sts:AssumeRole'
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs
+        - arn:aws:iam::aws:policy/AmazonS3FullAccess
+        - arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess
+  RedirectLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: actions/redirect-gateway-actions.redirectHandler
+      CodeUri: ../dist/dist.zip
+      Runtime: nodejs18.x
+      Role: !GetAtt RedirectGatewayLambdaRole.Arn
+      Environment:
+        Variables:
+          environment: !Ref environment
+Outputs:
+  RedirectLambdaFunctionArn:
+    Description: ARN of the redirect lambda function
+    Value: !GetAtt RedirectLambdaFunction.Arn
+    Export:
+      Name: !Sub "RedirectLambdaArn-${environment}"
