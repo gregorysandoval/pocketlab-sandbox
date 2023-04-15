@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  title = 'HMH Ed Sandbox';
+  title = 'PocketLab HMH Ed Integration Sandbox';
 
   constructor() {
     console.log('init');
