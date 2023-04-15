@@ -13,9 +13,9 @@ Set the `PL_CODEBUILD` env var to false. This will cause utils to be installed l
 
 Call package:zip to generate a zip archive with the lambda code files and pl-utils depedency.
 
-`$ npm run test`
+`$ yarn run test`
 
-`$ npm run package:zip`
+`$ yarn run package:zip`
 
     Initiates a series of scripts that equate to:
 
@@ -29,14 +29,18 @@ Call package:zip to generate a zip archive with the lambda code files and pl-uti
 
 Deployment scripts call the stack.sh bash script to package and deploy the CloudFormation templates in stacks/*.yaml using the AWS SAM CLI:
 
-`$ npm run package:redirect-gateway-lambdas`
+`$ yarn run package:redirect-gateway-lambdas`
 
-`$ npm run deploy:redirect-gateway-lambdas`
+`$ yarn run deploy:redirect-gateway-lambdas`
 
-## CloudFormation Resources ##
+### CloudFormation Resources ###
 `arn:aws:cloudformation:us-east-1:742951340522:stack/redirect-gateway-lambdas-services-stack-dev/f438fa30-d8ad-11ed-b682-0a41fe0ace1b`
 
     Stack name                   : redirect-gateway-lambdas-services-stack-dev
     Region                       : us-east-1
     Confirm changeset            : False
     Deployment s3 bucket         : amplify-amplifyeval-dev-143416-deployment
+
+## Launch UI ##
+
+`$ yarn run serve`
