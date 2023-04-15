@@ -4,21 +4,26 @@ Set the `PL_CODEBUILD` env var to false. This will cause utils to be installed l
 Using my AWS sandbox account / credentials profile.
 
 `$ cd ~/dev/pocketlab-sandbox`
+
 `$ export AWS_PROFILE=sandbox`
+
 `$ export PL_CODEBUILD=false`
+
 `$ npm run test`
+
 `$ npm run package:zip`
 
 ### NOTE: package:zip generates the distribution package. It initiates a chain of node (pre-)scripts that equate to: ###
-    `prepackage:zip`
-    `prebuild`
-    `clean`
-    `build`
-    `preinstall:utils (calls check env bash script)`
-    `install:utils`
-    `package:zip`
+    prepackage:zip
+    prebuild
+    clean
+    build
+    preinstall:utils (calls check env bash script)
+    install:utils
+    package:zip
 
 `$ npm run package:redirect-gateway-lambdas`
+
 `$ npm run deploy:redirect-gateway-lambdas`
 
 ## CloudFormation deployed resources ##
