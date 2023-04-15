@@ -1,13 +1,14 @@
 {
-  "name": "sandbox-services",
-  "version": "1.0.0",
-  "description": "Sandbox for PocketLab services",
+  "name": "pocketlab-sandbox",
+  "version": "0.0.0",
+  "description": "PocketLab HMH Ed integration sandbox",
   "scripts": {
+    "ng": "ng",
     "clean": "rm -rf ./dist",
-    "build": "tsc --outDir dist src/**/*.ts",
-    "prebuild": "npm run clean",
+    "serve": "ng serve --o",
+    "build": "ng build",
     "test": "jasmine --config=jasmine.json",
-    "pretest": "npm run build",
+    "watch": "ng build --watch --configuration development",
     "check:env": "bash scripts/check-env.sh",
     "package:zip": "cd dist && zip -r dist.zip . && cd ..",
     "prepackage:zip": "npm run build && npm run install:utils",
@@ -16,27 +17,40 @@
     "deploy:redirect-gateway-lambdas": "bash scripts/stack.sh deploy redirect-gateway-lambdas $PL_ENV",
     "predeploy:redirect-gateway-lambdas": "npm run check:env"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gregorysandoval/sandbox-services.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gregorysandoval/sandbox-services/issues"
-  },
-  "homepage": "https://github.com/gregorysandoval/sandbox-services#readme",
-  "devDependencies": {
-    "@tsconfig/recommended": "^1.0.2",
-    "@types/aws-sdk": "^2.7.0",
-    "@types/node": "^18.15.11",
-    "@types/oidc-provider": "^8.1.1",
-    "aws-sdk": "^2.1352.0",
-    "jasmine": "^4.6.0",
-    "typescript": "^5.0.2"
-  },
+  "private": true,
   "dependencies": {
-    "express": "^4.18.2",
-    "oidc-provider": "7.12.0"
+    "@angular/animations": "~12.2.3",
+    "@angular/common": "~12.2.3",
+    "@angular/compiler": "~12.2.3",
+    "@angular/core": "~12.2.3",
+    "@angular/forms": "~12.2.3",
+    "@angular/platform-browser": "~12.2.3",
+    "@angular/platform-browser-dynamic": "~12.2.3",
+    "@angular/router": "~12.2.3",
+    "oidc-provider": "^8.1.1",
+    "rxjs": "~6.6.3",
+    "typescript": "~4.3.5",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~12.2.3",
+    "@angular-eslint/eslint-plugin": "^0.0.1-alpha.32",
+    "@angular/cli": "~12.2.3",
+    "@angular/compiler-cli": "~12.2.3",
+    "@types/jasmine": "~3.6.0",
+    "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "eslint": "^5.0.0",
+    "jasmine": "^4.6.0",
+    "jasmine-core": "~3.6.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "ts-node": "~8.3.0",
+    "tslint": "^5.0.0"
+  },
+  "engines": {
+    "node": "16.x",
+    "npm": "7.x"
   }
 }

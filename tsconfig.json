@@ -1,28 +1,30 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "extends": "@tsconfig/recommended/tsconfig.json",
+  "compileOnSave": false,
   "compilerOptions": {
-    "target": "es2020",
-    "module": "commonjs",
-    "outDir": "dist",
-    "rootDir": "src",
-    "sourceMap": false,
-    "noImplicitAny": false,
-    "typeRoots": [
-      "node_modules/@types"
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2017",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
     ]
   },
-  "filesGlob":[
-    "typings/index.d.ts",
-    "src/**/*.ts",
-    "node_modules/typescript/lib/lib.es2015.d.ts"
-  ],
-  "paths": {
-    "@models/*" : [ "src/models/*" ],
-    "*" : [ "node_modules/aws-sdk/*" ]
-  },
-  "exclude": [
-    "dist",
-    "node_modules",
-    "src/karma-env"
-  ]
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
 }
