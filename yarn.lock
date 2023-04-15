@@ -5117,6 +5117,14 @@ jasmine-spec-reporter@~5.0.0:
   dependencies:
     colors "1.4.0"
 
+jasmine@~3.6.0:
+  version "3.6.4"
+  resolved "https://registry.yarnpkg.com/jasmine/-/jasmine-3.6.4.tgz#1f8e4a0d5028a2dc66942b73b9fef4c32be97ad5"
+  integrity sha512-hIeOou6y0BgCOKYgXYveQvlY+PTHgDPajFf+vLCYbMTQ+VjAP9+EQv0nuC9+gyCAAWISRFauB1XUb9kFuOKtcQ==
+  dependencies:
+    glob "^7.1.6"
+    jasmine-core "~3.6.0"
+
 jest-worker@^27.0.2, jest-worker@^27.0.6:
   version "27.4.2"
   resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-27.4.2.tgz#0fb123d50955af1a450267787f340a1bf7e12bc4"

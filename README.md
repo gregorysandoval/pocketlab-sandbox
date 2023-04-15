@@ -11,16 +11,20 @@ Using my AWS sandbox account / credentials profile.
 
 `$ npm run test`
 
+### package:zip generates an zip archive that includes the lambda code files and pl-utils depedency. It initiates a chain of node scripts that equate to: ###
+
 `$ npm run package:zip`
 
-### NOTE: package:zip generates the distribution package. It initiates a chain of node (pre-)scripts that equate to: ###
     prepackage:zip
-    prebuild
-    clean
-    build
-    preinstall:utils (calls check env bash script)
-    install:utils
-    package:zip
+    precompile      $ npm run clean => rm -rf ./dist
+    compile         $ tsc --outDir dist src/actions/*.ts src/domains/*.ts
+                    $ npm run install:utils
+                    $ bash scripts/check-env.sh
+    package:        $ cd dist
+                    $ zip -r dist.zip .
+                    $ cd ..
+
+### deployment scripts call the scripts/stack.sh bash script which packages and deploys the CloudFormation templates in stacks/*.yaml using the AWS SAM CLI: ###
 
 `$ npm run package:redirect-gateway-lambdas`
 

@@ -7,16 +7,20 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "serve": "ng serve --o",
+
     "clean": "rm -rf ./dist",
-    "compile": "tsc --outDir dist src/actions/*.ts src/domains/*.ts",
-    "precompile": "ng clean",
     "check:env": "bash scripts/check-env.sh",
+    "install:utils": "bash scripts/install-utils.sh",
+
+    "compile": "tsc --outDir dist src/actions/*.ts src/domains/*.ts",
+    "precompile": "npm run clean",
     "package:zip": "cd dist && zip -r dist.zip . && cd ..",
     "prepackage:zip": "npm run compile && npm run install:utils",
-    "install:utils": "bash scripts/install-utils.sh",
+
     "package:redirect-gateway-lambdas": "bash scripts/stack.sh package redirect-gateway-lambdas",
     "deploy:redirect-gateway-lambdas": "bash scripts/stack.sh deploy redirect-gateway-lambdas $PL_ENV",
     "predeploy:redirect-gateway-lambdas": "npm run check:env"
+
   },
   "private": true,
   "dependencies": {
@@ -44,6 +48,7 @@
     "@typescript-eslint/eslint-plugin-tslint": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
     "eslint": "^5.0.0",
+    "jasmine": "~3.6.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "ts-node": "~8.3.0",
