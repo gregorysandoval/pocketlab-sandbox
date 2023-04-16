@@ -2,7 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 
 import { UrlUtils as UU } from '@utils/url-utils';
 
-import { mockAuth } from '@config/app.config';
+import { mockAuth, mockLaunch } from '@config/app.config';
 import { environment } from '@config/environment';
 
 @Injectable({
@@ -13,18 +13,20 @@ export class MockAuthenticateService {
   constructor(
     @Inject('DOCUMENT') private document: Document,
   ) {
-    console.log('init');
+    console.log('service init');
   }
 
-  validate(): void {
-    const url = UU.constructUrl(environment.authUrl, mockAuth);
+  validate() {
+    this._redirect(UU.constructUrl(environment.authUrl, mockAuth));
+  }
+
+  launch() {
+    this._redirect(UU.constructUrl(environment.launchUrl, mockLaunch));
+  }
+  
+  private _redirect(url: string) {
     console.log(`redirect: ${url}`);
     // this.document.location.href = url;
-  }
-
-  launch(): void {
-    // Parse response received at /authorize
-    // Redirect to Tool launch endpoint
   }
 
 }
