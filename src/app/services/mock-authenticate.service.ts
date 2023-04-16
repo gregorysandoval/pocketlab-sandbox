@@ -16,10 +16,15 @@ export class MockAuthenticateService {
     console.log('init');
   }
 
-  launch(): void {
-    const url = UU.constructUrl(environment.toolUrl, mockAuth);
+  validate(): void {
+    const url = UU.constructUrl(environment.authUrl, mockAuth);
     console.log(`redirect: ${url}`);
     // this.document.location.href = url;
+  }
+
+  launch(): void {
+    // Parse response received at /authorize
+    // Redirect to Tool launch endpoint
   }
 
 }
