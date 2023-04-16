@@ -16,10 +16,4 @@ export module OIDC {
     token: any;
   }
 
-  export const mockAuth: Partial<AuthRequest> = {
-    client_id: 'test',
-    login_hint: 'test',
-    nonce: '0123456789',
-  }
-
 }
