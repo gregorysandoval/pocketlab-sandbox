@@ -12,13 +12,15 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: 'DOCUMENT', useFactory: () => document },
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule {
 
-  constructor() {
-    console.log('init');
-  }
+  constructor() { }
 
 }

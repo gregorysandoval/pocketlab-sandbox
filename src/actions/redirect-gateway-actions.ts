@@ -1,6 +1,6 @@
 import { RedirectDomain } from '../domains/redirect-domain';
 
-export function redirectHandler(event, context, callback) {
+export function redirectHandler(event: any, _context: any, callback: any): void {
   event = event as any;
   console.log(event);
   const headers = new RedirectDomain().redirect(parseParams(event));
@@ -11,7 +11,7 @@ export function redirectHandler(event, context, callback) {
   });
 }
 
-function parseParams(event: any) {
+function parseParams(event: any): any {
   let params: any;
   try {
     if (event.httpMethod === 'GET') {

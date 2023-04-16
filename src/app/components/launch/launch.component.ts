@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { MockAuthenticateService } from '../../services/mock-authenticate.service';
+
 @Component({
   selector: 'app-launch',
   templateUrl: './launch.component.html',
@@ -7,8 +9,14 @@ import { Component } from '@angular/core';
 })
 export class LaunchComponent {
 
-  constructor() {
+  constructor(
+    private authenticateService: MockAuthenticateService,
+  ) {
     console.log('init');
+  }
+
+  launch(): void {
+    this.authenticateService.launch();
   }
 
 }

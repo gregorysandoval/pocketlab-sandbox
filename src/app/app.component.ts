@@ -9,8 +9,6 @@ export class AppComponent {
 
   title = 'PocketLab HMH Ed Integration Sandbox';
 
-  constructor() {
-    console.log('init');
-  }
+  constructor() { }
 
 }

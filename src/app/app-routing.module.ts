@@ -17,10 +17,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class AppRoutingModule {
-
-  constructor() {
-    console.log('init');
-  }
-
-}
+export class AppRoutingModule {}
