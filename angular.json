@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "pocketlab-sandbox-app": {
+    "app-pocketlab-sandbox": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -44,7 +44,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pocketlab-sandbox-app",
+            "outputPath": "dist/app-pocketlab-sandbox",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -96,10 +96,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "pocketlab-sandbox-app:build:production"
+              "browserTarget": "app-pocketlab-sandbox:build:production"
             },
             "development": {
-              "browserTarget": "pocketlab-sandbox-app:build:development"
+              "browserTarget": "app-pocketlab-sandbox:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -107,11 +107,11 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pocketlab-sandbox-app:build"
+            "browserTarget": "app-pocketlab-sandbox:build"
           }
         }
       }
     }
   },
-  "defaultProject": "pocketlab-sandbox-app"
+  "defaultProject": "app-pocketlab-sandbox"
 }
