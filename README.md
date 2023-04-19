@@ -41,6 +41,10 @@ Deployment scripts call the stack.sh bash script to package and deploy the Cloud
     Confirm changeset            : False
     Deployment s3 bucket         : amplify-amplifyeval-dev-143416-deployment
 
-## Launch UI ##
+## Build Sandbox App (for deployment to S3) ##
+
+`$ ng build --configuration=production`
+
+## Launch Sandbox App ##
 
 `$ yarn run serve`
