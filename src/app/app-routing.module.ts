@@ -7,7 +7,6 @@ import { AuthenticateComponent } from '@components/authenticate/authorize.compon
 const routes: Routes = [
   { path: '', redirectTo: '/launch', pathMatch: 'full' },
   { path: 'launch', component: LaunchComponent },
-  // TODO: This could be an API endpoint instead?
   { path: 'authenticate', component: AuthenticateComponent},
 ];
 @NgModule({
