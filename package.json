@@ -2,33 +2,51 @@
   "name": "pocketlab-sandbox",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
+
     "test": "jasmine --config=jasmine.json",
-    "build": "ng build",
+
+    "ng": "ng",
+    "build-app": "ng build",
     "watch": "ng build --watch --configuration development",
     "serve": "ng serve --o",
+
     "clean": "rm -rf ./dist",
     "check:env": "bash scripts/check-env.sh",
     "install:utils": "bash scripts/install-utils.sh",
+
     "compile": "tsc --outDir dist src/actions/*.ts src/domains/*.ts",
     "precompile": "npm run clean",
+
     "package:zip": "cd dist && zip -r dist.zip . && cd ..",
     "prepackage:zip": "npm run compile && npm run install:utils",
+
     "package:redirect-gateway-lambdas": "bash scripts/stack.sh package redirect-gateway-lambdas",
     "deploy:redirect-gateway-lambdas": "bash scripts/stack.sh deploy redirect-gateway-lambdas $PL_ENV",
     "predeploy:redirect-gateway-lambdas": "npm run check:env"
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "16.0.0-rc.2",
+    "@angular/common": "^16.0.0-rc.2",
+    "@angular/compiler": "^16.0.0-rc.2",
+    "@angular/core": "^16.0.0-rc.2",
+    "@angular/platform-browser": "^16.0.0-rc.2",
+    "@angular/platform-browser-dynamic": "^16.0.0-rc.2",
+    "@angular/router": "16.0.0-rc.2",
     "oidc-provider": "^8.1.1",
-    "typescript": "5.0.2"
+    "rxjs": "^6.5.3",
+    "typescript": "^5.0.2",
+    "zone.js": "~0.13.0"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^16.0.0-rc.1",
+    "@angular/cli": "^16.0.0-rc.1",
+    "@angular/compiler-cli": "^16.0.0-rc.1",
     "@types/jasmine": "^4.3.1",
     "@types/node": "^12.11.1",
     "eslint": "^5.0.0",
     "jasmine": "^4.3.1",
-    "ts-node": "~8.3.0",
+    "ts-node": "^10.9.1",
     "tslint": "^5.0.0"
   },
   "engines": {

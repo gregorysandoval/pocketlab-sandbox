@@ -39,7 +39,7 @@ Deployment scripts call the stack.sh bash script to package and deploy the Cloud
     Stack name                   : redirect-gateway-lambdas-services-stack-dev
     Region                       : us-east-1
     Confirm changeset            : False
-    Deployment S3 bucket         : amplify-amplifyeval-dev-143416-deployment
+    Deployment S3 bucket         : pocketlab-20190131214151-deployment
 
 ## Launch Frontend App (localhost) ##
 

@@ -21,8 +21,6 @@ chrome-profiler-events*.json
 *.launch
 .settings/
 *.sublime-workspace
-
-# IDE - VSCode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -31,6 +29,7 @@ chrome-profiler-events*.json
 .history/*
 
 # misc
+.angular
 /.sass-cache
 /connect.lock
 /coverage
@@ -40,6 +39,6 @@ yarn-error.log
 testem.log
 /typings
 
-# System Files
+# OS Files
 .DS_Store
 Thumbs.db
