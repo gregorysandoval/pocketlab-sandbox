@@ -5105,10 +5105,10 @@ istanbul-lib-instrument@^4.0.3:
     istanbul-lib-coverage "^3.0.0"
     semver "^6.3.0"
 
-jasmine-core@~3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-3.6.0.tgz#491f3bb23941799c353ceb7a45b38a950ebc5a20"
-  integrity sha512-8uQYa7zJN8hq9z+g8z1bqCfdC8eoDAeVnM5sfqs7KHv9/ifoJ500m018fpFc7RDaO6SWCLCXwo/wPSNcdYTgcw==
+jasmine-core@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-4.6.0.tgz#6884fc3d5b66bf293e422751eed6d6da217c38f5"
+  integrity sha512-O236+gd0ZXS8YAjFx8xKaJ94/erqUliEkJTDedyE7iHvv4ZVqi+q+8acJxu05/WJDKm512EUNn809In37nWlAQ==
 
 jasmine-spec-reporter@~5.0.0:
   version "5.0.2"
@@ -5117,13 +5117,13 @@ jasmine-spec-reporter@~5.0.0:
   dependencies:
     colors "1.4.0"
 
-jasmine@~3.6.0:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/jasmine/-/jasmine-3.6.4.tgz#1f8e4a0d5028a2dc66942b73b9fef4c32be97ad5"
-  integrity sha512-hIeOou6y0BgCOKYgXYveQvlY+PTHgDPajFf+vLCYbMTQ+VjAP9+EQv0nuC9+gyCAAWISRFauB1XUb9kFuOKtcQ==
+jasmine@^4.3.1:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/jasmine/-/jasmine-4.6.0.tgz#2ecde288da25815c67897bb9b9b91f6709880ce1"
+  integrity sha512-iq7HQ5M8ydNUspjd9vbFW9Lu+6lQ1QLDIqjl0WysEllF5EJZy8XaUyNlhCJVwOx2YFzqTtARWbS56F/f0PzRFw==
   dependencies:
     glob "^7.1.6"
-    jasmine-core "~3.6.0"
+    jasmine-core "^4.6.0"
 
 jest-worker@^27.0.2, jest-worker@^27.0.6:
   version "27.4.2"
